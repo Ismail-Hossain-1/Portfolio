@@ -6,7 +6,7 @@ const bodyParser= require('body-parser');
 const dotenv= require("dotenv").config();
 
 app.use(bodyParser.urlencoded({extended:true}));
-mongoose.connect(process.env.db);
+mongoose.connect(process.env.db); //....net/Portfolio' database collection name
 
 const msgSchema={
     name:String,
