@@ -27,18 +27,18 @@
     <section class="home" id="home">
         <div class="home-content">
             <h3>Hi, I am </h3>
-            <h1>Ismail Hossain</h1>
-            <h3> a <span>Software Engineering undergraduate</span></h3>
+            <h1 id="my-name"></h1>
+            <h3> a <span class="my-status"></span></h3>
             <p>These are random text which will he edited later. These are random text which will he edited later. These are random text which will he edited later</p>
 
             <div class="social-media">
-                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="https://github.com/Ismail-Hossain-1"><i class="fa-brands fa-github"></i></a>
                 <a href="#"><i class="fa-brands fa-linkedin"></i></a>
                 <a href="#"><i class="fa-solid fa-globe"></i></a>
             </div>
         </div>
         <div class="home-img">
-            <img src="image/me.jpg" alt="" >
+            <img src="image/me.png" alt="" >
         </div>
     </section>
 
@@ -100,20 +100,47 @@
    <section class="contacts" id="contacts">
     <h2 class="heading">Contact <span>Me</span></h2>
 
-    <form action="#">
+    <form id="form" method="post" action="", name="contact-form">
         <div class="input-box">
-            <input type="text" placeholder="Full Name" id="input-name">
-            <input type="email" placeholder="Email" id="input-email">
+            <input type="text" placeholder="Full Name" id="input-name" name="name">
+            <input type="email" placeholder="Email" id="email" name="email">
         </div>
-        <div>
-            <textarea placeholder="Your Message" name="" id="" cols="30" rows="10"></textarea>
-        </div>
-            <input type="submit" value="Send Message" class="btn">
+        
+            <textarea placeholder="Your Message" name="message" id="" cols="30" rows="10"></textarea>
+        
+            <input type="submit" value="Submit" class="btn" id="submit">
 
         </form>
    </section>
-
+                <!-- Scroll Reveal -->
+                <script src="https://unpkg.com/scrollreveal"></script>
+                <!-- Typed-script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.js"></script>
 
     <script src="index.js"></script>
+    <script src="form-submit.js"></script>
+    <!-- <script>
+        const form = document.querySelector("#form")
+        const submitButton = document.querySelector("#submit")
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwG9vCMBREFM4suhSiTdVPFu7-F-6JclKyZGGuKjFS-dqaZT6kKXS6r_15kub3YH2R5yw/exec'
+     
+        form.addEventListener('submit', e => {
+          submitButton.disabled = true
+          e.preventDefault()
+          let requestBody = new FormData(form)
+          fetch(scriptURL, { method: 'POST', body: requestBody})
+            .then(response => {
+               alert('Success!', response)
+               submitButton.disabled = false
+              })
+            .catch(error => {
+            alert('Error!', error.message)
+              submitButton.disabled = false
+     
+            }
+            )
+        })
+     </script> -->
+
 </body>
 </html>

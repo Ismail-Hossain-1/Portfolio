@@ -120,7 +120,7 @@ span{
     background: transparent;
     border: .2rem solid var(--main-color);
 
-    border-radius: 40%;
+    border-radius: 50%;
 
     font-size: 2rem;
     color: var(--main-color);
@@ -270,9 +270,20 @@ span{
     }
 }
 
-@media (max-width:768px) {
+@media (max-width:760px) {
     #menue-icon{
         display: block;
+    }
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: var(--bg-color);
+        border-top: 1rem solid rgba(0,  0  , 0, 0.2);
+        box-shadow: 0 .5rem 1rem rgb(0, 0, 0, 0.2);
+        display: none;
     }
     .home{
         flex-direction: column;
@@ -296,13 +307,5 @@ span{
     }
     .projects h2 {
         margin-bottom: 3rem;
-    }
-}
-@media (max-width:450px){
-    html{
-        font-size: 50%;
-    }
-    .contacts form .input-box input{
-        width: 100%;
     }
 }
