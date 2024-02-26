@@ -54,7 +54,7 @@ ScrollReveal().reveal('.about-content', {oringin: 'left'});
 ScrollReveal().reveal('.about-image img, .home-contact p', {oringin: 'right'});
 
 var typed = new Typed('#my-name, #my-statue', {
-    strings:['Ismail Hossain'],
+    strings:['smail Hossain'],
     typeSpeed:150,
     backSpeed:70,
     loop: true,

@@ -7,14 +7,15 @@
     text-decoration: none;
     border: none;
     outline: none;
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
     font-family: 'Nunito', sans-serif;
+    /* overflow-y: hidden; */
 
 }
 
 :root{
-    --bg-color:#191f36;
-    --snd-bg-color:#262840;
+    --bg-color:#121625;
+    --snd-bg-color:#191b31;
     --text-color:#fff;
     --main-color:#5982F4;
 }
@@ -31,9 +32,11 @@ body{
 section{
     min-height: 100vh;
     padding: 10rem 9% 2rem;
+   
 }
 .header{
-    position: fixed;
+   position: fixed;
+
     top: 0;
     left: 0;
     width: 100%;
@@ -42,7 +45,7 @@ section{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100;
+    z-index: 900;
 }
 
 .logo{
@@ -73,6 +76,7 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
+   
 }
 
 .home-content h3{
@@ -137,13 +141,17 @@ span{
 
     border: .2rem solid var(--main-color);
 
-    background-color: #c5d0ff;
+    background-color: #4af0f0;
     font-size: 2rem;
     color: var(--main-color);
     margin: 3rem 3.5rem 3em 0;
     transition: ease;
     box-shadow: 0 0 1rem var(--main-color);
 }
+
+.button{
+    text-align: center;
+}    
 .social-media a:hover{
 
     background-color: var(--main-color);
@@ -153,7 +161,7 @@ span{
 
 
 
-.about{
+.about, .education{
     
     display: flex;
     justify-content: center;
@@ -161,6 +169,7 @@ span{
     gap: 2rem;
     
     background-color: var(--snd-bg-color);
+    
 }
 
 
@@ -181,16 +190,59 @@ span{
     text-align: left;
     line-height: 1.2;
 }
-.about-content h3 {
+.about-content h3{
     font-size: 2.6rem;
 }
-.about-content p {
+.about-content p{
     font-size: 1.5rem;
     margin: 2rem 0 3rem;
 
 }
 
+.education .contents{
+  
+    font-size: 1.7rem;
+    font-family: cursive;
+    padding: 0px 30px;
+    border-left: 2px solid rgb(114, 114, 114);
+}
 
+.education .box{
+   
+    border-radius: 10px;
+    position: relative;
+    padding: 20px;
+    border: 1px solid#eaeaea;
+    background-color:  #5f6080;
+    cursor: unset;
+    transition: all 0.4s;
+    margin-bottom: 3rem;
+}
+.education .box:hover{
+    box-shadow: 0px 3px 12px 0px #706f6f;
+    border: 1px solid transparent;
+}
+
+/* .education .box::before{
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+  
+    top:0px;
+    background-color: #658178;
+    border:2px solid white;
+} */
+
+@media (max-width: 768px) {
+
+    .education{
+        flex-direction: column;
+      
+    }
+    
+}
 .projects h2{
     margin-bottom: 3rem;
 }
@@ -250,6 +302,77 @@ span{
     cursor: pointer;
 }
 
+.chatbot .chatbot-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+.input-area{
+    /* flex-direction: column; */
+    width: 45%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.chatbot form textarea{
+    width: 100%;
+    padding: 2rem;
+    font-size: 1.8rem;
+    color: var(--text-color);
+    border-radius: .8rem;
+    margin: 0.7rem 0;
+    background-color: #343646;
+    
+}
+.bot{
+    width: 52%;
+}
+.chatbot div p{
+    cursor:default;
+    width: 100%;
+    padding: 2.5rem;
+    font-size: 1.8rem;
+    margin: 5rem;
+    color: var(--text-color);
+    border-radius: .8rem;
+    margin: 0.7rem 0;
+    background-color: #343646;
+}
+.chatbot h3{
+    font-family:'Nunito', sans-serif;
+    font-size: 3rem;
+}
+.chatExperiment {
+    background-color: #776fa3;
+    border-radius: 20px;
+    border: none;
+    color: #eeeeee;
+    cursor: pointer;
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: 1.6rem;
+    /* padding: 5px 15px;
+    text-align: center;
+    text-decoration: none; */
+  }
+@keyframes glowing {
+    0% {
+      background-color: #776fa3;
+      box-shadow: 0 0 5px #736ba1;
+    }
+    50% {
+      background-color: #625a8d;
+      box-shadow: 0 0 20px #948bca;
+    }
+    100% {
+      background-color: #8e8aa5;
+      box-shadow: 0 0 5px #8780ad;
+    }
+  }
+  .chatExperiment {
+    animation: glowing 1300ms infinite;
+  }
 @media (max-width:1200px) {
     html{
         font-size: 55%;
@@ -260,10 +383,13 @@ span{
         padding: 2rem 3%;
     }
     section{
-        padding: 10rem 3%;
+        flex-direction: column;
+        padding: 10rem 10%;
+        min-height: auto;
     }
     .projects{
-        padding: 7rem;
+        min-height: auto;
+        padding: 7%;
     }
     .contacts{
         min-height: auto;
@@ -271,6 +397,9 @@ span{
 }
 
 @media (max-width:760px) {
+    *{
+        overflow-x: scroll;
+    }
     #menue-icon{
         display: block;
     }
@@ -300,12 +429,20 @@ span{
     }
     .about{
         flex-direction: column;
+        padding: 5vw;
     }
     .about-image img{
         width: 90vw;
         margin-top: 4rem;
     }
+    .projects{
+        flex-direction: column;
+       padding: 5px;
+    }
     .projects h2 {
         margin-bottom: 3rem;
+    }
+    .chatbot{
+        flex-direction: column;
     }
 }
