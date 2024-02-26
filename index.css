@@ -141,7 +141,7 @@ span{
 
     border: .2rem solid var(--main-color);
 
-    background-color: #4af0f0;
+    background-color: #e2e1ff;
     font-size: 2rem;
     color: var(--main-color);
     margin: 3rem 3.5rem 3em 0;
@@ -191,7 +191,7 @@ span{
     line-height: 1.2;
 }
 .about-content h3{
-    font-size: 2.6rem;
+    font-size: 1.6rem;
 }
 .about-content p{
     font-size: 1.5rem;
@@ -278,6 +278,12 @@ span{
     margin: 1rem 0 3rem;
 }
 
+.hideAnd{
+    display: none;
+}
+#andr:hover + .hideAnd{
+    display: block;
+}
 .contacts h2{
  margin-bottom:3rem; 
 }
@@ -300,6 +306,10 @@ span{
 .contacts form .btn{
     margin-top: 2rem;
     cursor: pointer;
+}
+.contacts p{
+    text-align: center;
+    font-size: 2rem;
 }
 
 .chatbot .chatbot-container{
@@ -358,16 +368,16 @@ span{
   }
 @keyframes glowing {
     0% {
-      background-color: #776fa3;
-      box-shadow: 0 0 5px #736ba1;
+      background-color: #d9d5f0;
+      box-shadow: 0 0 5px #d0cfd6;
     }
     50% {
-      background-color: #625a8d;
-      box-shadow: 0 0 20px #948bca;
+      background-color: #e2e1e6;
+      box-shadow: 0 0 20px #c9c8cf;
     }
     100% {
-      background-color: #8e8aa5;
-      box-shadow: 0 0 5px #8780ad;
+      background-color: #ccc9df;
+      box-shadow: 0 0 5px #918da7;
     }
   }
   .chatExperiment {

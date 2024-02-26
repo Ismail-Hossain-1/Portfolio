@@ -22,7 +22,7 @@
             <a href="#contacts"> Contacts</a>
             <a href="#projects"> Projects</a>
             <a href="#education"> Education</a>
-            <a href="#chatbot" ><div class="chatExperiment">Experiments</div></a>
+            <a href="#chatbot" ><div class="chatExperiment" style="color: rgb(4, 97, 19);">Experiments</div></a>
 
         </div>
     </header>
@@ -57,7 +57,7 @@
         <div class="about-content">
             <h2 class="heading">About Me</h2>
             <!-- <h3>Software Engineering Undergraduate</h3> -->
-            <h3 style="font-family:'Segoe UI', sans-serif; font-size: 2rem;">An IT enthusiast currently pursuing Software Engineering BSc. degree and completed 2 years of the program. </br><br>
+            <h3>An IT enthusiast currently pursuing Software Engineering BSc. degree and completed 2 years of the program. </br><br>
                 A reliable team memer who worked a number of academic and non-academic team projects.Seeking internship opportunities that can greatly enhance my learning. 
                 Commited to continuous learning and continuous self development.
             </h3>
@@ -75,31 +75,32 @@
             <div class="project-box">
                 <i class="fa-brands fa-android"></i>
                 <h3>Android App</h3>
-                <p>These are random text which will he edited later.
-                    These are random text which will he edited later.
-                    These are random text which will he edited later</p>
-
-                <a href="#" class="btn"> Read more</a>
+                <p>An app with 3D models for kids to learn about the solar system and holy sites in islam. 
+                    The android app was build using flutter framework along with blender for 3D models.
+                </p>
+                
+                <a href="https://github.com/Ismail-Hossain-1/flutter_tutorial" class="btn" id="android"> Read more</a>
 
             </div>
             <div class="project-box">
                 <i class="fa-brands fa-java"></i>
-                <h3></h3>
-                <p>These are random text which will he edited later.
-                    These are random text which will he edited later.
-                    These are random text which will he edited later</p>
+                <h3>Desktop App</h3>
+                <p>It is a game where a cat has to cross a river savely using a floating plank.
+                   The game was developed using java swing libraby. 
+                   Click Read more button for more.
+                   </p>
 
-                <a href="#" class="btn"> Read more</a>
+                <a href="https://github.com/Ismail-Hossain-1/Brave-Cat" class="btn"> Read more</a>
 
             </div>
             <div class="project-box">
                 <i class="fa-solid fa-c"><i class="fa-solid fa-plus"><i class="fa-solid fa-plus"></i></i></i>
-                <h3>Android App</h3>
-                <p>These are random text which will he edited later.
-                    These are random text which will he edited later.
-                    These are random text which will he edited later</p>
+                <h3>Racing Game</h3>
+                <p> A car racing game where the player has to run his car on busy highway without 
+                    facing any accidents.
+                    It was developed using iGraphics library. Check more:</p>
 
-                <a href="#" class="btn"> Read more</a>
+                <a href="https://github.com/Ismail-Hossain-1/BEAT-THE-ROAD-Game" class="btn"> Read more</a>
 
             </div>
         </div>
@@ -112,28 +113,27 @@
             <div class="box" >
                     <h3>2016-2018</h3>
                     <h2>SSC</h2>
-                    <p style="">
+                    <p >
                         In 2018 I got my secondary school certificate form my school Master Mission Hight School. 
                         It was located in a suburb of a large city called Cumilla.
                          The teachers were supportive and dedicated to helping students succeed.
                     </p>
             </div>
             <div class="box">
-                <h4>2016-2018</h4>
-                <h3>SSC</h3>
+                <h4>2018-2020</h4>
+                <h3>HSC</h3>
                 <p>
-                    In 2018 I got my secondary school certificate form my school Master Mission Hight School. 
-                    It was located in a suburb of a large city called Cumilla.
-                     The teachers were supportive and dedicated to helping students succeed.
+                    My 2 years in higher secondary program was from Kalikapur Abdul Matin Khasru Govt. College, Cumilla. 
+                    The board exam was planned to be held on April 2020 but eventually 
+                    never happenned due to the Epidemic we all know about.
                 </p>
         </div>
         <div class="box">
-            <h4>2016-2018</h4>
-            <h3>SSC</h3>
+            <h4>2022-2015(expected)</h4>
+            <h3>BSc</h3>
             <p>
-                In 2018 I got my secondary school certificate form my school Master Mission Hight School. 
-                It was located in a suburb of a large city called Cumilla.
-                 The teachers were supportive and dedicated to helping students succeed.
+            Pursuing my BSc degree at the Department of Software Engineering from Shahjalal University of Science and Technology(SUST).
+            I am halfway done with the four years program.
             </p>
          </div>
         </div>
@@ -158,6 +158,9 @@
             <input type="submit" value="Submit" class="btn" id="submit">
 
         </form>
+        <p> Last contacted <span> <%- lastContacted %> </span></p>
+        <p>  on <%- lastContactedTime %></p>
+
     </section>
 
     <!-- Gemini-chatbot -->
@@ -171,6 +174,7 @@
             <textarea name="prompt" id="prompt" cols="30" rows="10"></textarea>
             <button type="submit" class="btn">Generate</button>
         </form>
+
         </div>
         <div id="response" style="color: aliceblue;" class="bot" >
                  <!-- Hi <% if(typeof resTxt !=='undefined' ){%>

@@ -68,16 +68,21 @@ const Message = mongoose.model("message", msgSchema);
 
 
 
-
+let lastContacted='';
+let lastContactedTime='';
 app.post('/sendMsg', (req, res) => {
     const message = new Message({
         name: req.body.name,
         email: req.body.email,
         message: req.body.message
     });
-    console.log(message);
+   // console.log(message);
 
-     message.save();
+     message.save().then(doc=>{
+        lastContactedTime +=doc.createdAt;
+        //console.log(lastContactedTime);
+     });
+     lastContacted += message.name;
     res.redirect('/#contacts');
 
 });
@@ -116,11 +121,14 @@ app.post('/generateText',async (req, res) => {
 app.get("/", (req, res) => {
     
       //res.render('./', data);
-
-      res.render('index', {
-            restxt:`${responsetxt}`
-      });
+    const data={
+        restxt:`${responsetxt}`,
+        lastContacted: `${lastContacted}`, 
+        lastContactedTime:`${lastContactedTime}`
+  };
+      res.render('index', data);
       responsetxt='';
+      lastContacted='';
 
 });
 
