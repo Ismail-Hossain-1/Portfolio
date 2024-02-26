@@ -2,7 +2,7 @@ const {GoogleGenerativeAI} =require("@google/generative-ai");
 const express = require('express');
 const ejs = require('ejs');
 const app = express();
-
+const PORT = process.env.PORT || 3000;
 app.use(express.static(__dirname+'/'));
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -69,8 +69,8 @@ const Message = mongoose.model("message", msgSchema);
 
 
 
-let lastContacted='';
-let lastContactedTime='';
+// let lastContacted='';
+// let lastContactedTime='';
 app.post('/sendMsg', (req, res) => {
     const message = new Message({
         name: req.body.name,
@@ -83,12 +83,12 @@ app.post('/sendMsg', (req, res) => {
         lastContactedTime +=doc.createdAt;
         //console.log(lastContactedTime);
      });
-     lastContacted += message.name;
+    //  lastContacted += message.name;
     res.redirect('/#contacts');
 
 });
 
-let responsetxt='';
+// let responsetxt='';
 app.post('/generateText',async (req, res) => {
   
     try{
@@ -102,12 +102,12 @@ app.post('/generateText',async (req, res) => {
            const response = await result.response;
           const text = response.text();
           
-        responsetxt +=text;
+        // responsetxt +=text;
           
     //     res.render('/'{
     //         restxt:`${responsetxt}`
     //   })
-       // res.send(text);
+        res.send(text);
         //    console.log(prompt.blue);
         //    console.log(text.red);
     
@@ -262,7 +262,7 @@ app.get("/", (req, res) => {
          </div>
         </div>
         <div class="about-image">
-            <img src="../image/education.png" alt="" class="about-image">
+            <img src="./image/education.png" alt="" class="about-image">
         </div>
     </section>
     
@@ -282,8 +282,8 @@ app.get("/", (req, res) => {
             <input type="submit" value="Submit" class="btn" id="submit">
 
         </form>
-        <p> Last contacted: <span> ${ lastContacted } </span></p>
-        <p>  on: ${lastContactedTime }</p>
+        <p> Last contacted: <span> </span></p>
+        <p>  on: </p>
 
     </section>
 
@@ -305,7 +305,7 @@ app.get("/", (req, res) => {
                     <p> <%= resxt %></p>
                 <% } %>  -->
                 <h3>Chatbot:</h3>
-                <p> ${responsetxt}</p>
+                <p> </p>
 
         </div>
     </div>
@@ -343,7 +343,7 @@ app.get("/", (req, res) => {
 
 });
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
     console.log("listening to http://localhost:3000");
 });
 
